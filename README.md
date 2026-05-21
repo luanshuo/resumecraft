@@ -51,7 +51,7 @@ npm run build
 ```bash
 cd server
 go mod tidy
-go run main.go
+go run .           # 启动在 :8080
 ```
 
 后端提供 RESTful API（`/api/v1/`），支持 SQLite（默认）或 MySQL。
