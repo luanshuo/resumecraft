@@ -1,6 +1,6 @@
 # 📄 ResumeCraft · 超级简历
 
-> 在线简历生成器 — Web 界面编辑、实时预览、多模块管理、一键 PDF 下载
+[![CI & Package](https://github.com/luanshuo/resumecraft/actions/workflows/ci.yml/badge.svg)](https://github.com/luanshuo/resumecraft/actions/workflows/ci.yml)  > 在线简历生成器 — Web 界面编辑、实时预览、多模块管理、一键 PDF 下载
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev)
