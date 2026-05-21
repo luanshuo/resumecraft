@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简历生成器 - ResumeCraft</title>
+  <link rel="stylesheet" href="/app/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-router@4/dist/vue-router.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Loading -->
+    <div id="loading-screen">
+      <div class="spinner"></div>
+      <div class="text">加载中...</div>
+    </div>
+    <!-- Error -->
+    <div id="error-screen">
+      <div class="icon">😅</div>
+      <div class="title">加载失败</div>
+      <div class="desc" id="error-detail"></div>
+      <button class="btn" onclick="location.reload()">重新加载</button>
+    </div>
+    <!-- Router View -->
+    <router-view></router-view>
+  </div>
+
+  <script src="/app/api.js"></script>
+  <script src="/app/app.js"></script>
+</body>
+</html>

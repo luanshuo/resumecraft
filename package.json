@@ -1,0 +1,40 @@
+{
+  "name": "resumecraft",
+  "version": "1.0.0",
+  "description": "ResumeCraft - 超级简历，在线简历生成器。支持 Web 界面编辑、实时预览、多模块管理、PDF 导出。",
+  "private": false,
+  "license": "MIT",
+  "author": "ResumeCraft Contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luanshuo/resumecraft"
+  },
+  "keywords": [
+    "resume",
+    "resume-builder",
+    "cv",
+    "pdf",
+    "react",
+    "typescript",
+    "vite"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "html2pdf.js": "^0.10.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/uuid": "^9.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^4.3.0"
+  }
+}
