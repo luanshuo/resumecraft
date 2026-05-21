@@ -1,0 +1,33 @@
+# ========================================
+# ResumeCraft — Docker Compose
+# ========================================
+
+version: "3.8"
+
+services:
+  # ---- 前端 (React SPA) ----
+  frontend:
+    build: .
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+
+  # ---- 后端 (Go API，可选) ----
+  # 取消注释以下段落以启用后端
+  # backend:
+  #   build:
+  #     context: ./server
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "8080:8080"
+  #   environment:
+  #     - PORT=8080
+  #     - DB_TYPE=sqlite
+  #     - DB_PATH=/data/jianli.db
+  #     - JWT_KEY=change-me-in-production
+  #   volumes:
+  #     - db_data:/data
+  #   restart: unless-stopped
+
+# volumes:
+#   db_data:

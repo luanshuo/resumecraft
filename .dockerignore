@@ -1,0 +1,32 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# IDE
+.vscode
+.idea
+*.swp
+
+# OS
+.DS_Store
+
+# Environment
+.env
+
+# Git
+.git
+.gitignore
+
+# Docs (keep README in image via COPY)
+PLAN.md
+
+# Go (not needed for frontend image)
+server/
+
+# Screenshots (not needed in container)
+screenshots/
+
+# Logs
+*.log
