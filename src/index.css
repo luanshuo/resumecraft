@@ -968,3 +968,114 @@ html, body {
 .ats-toggle {
   border: 1px solid var(--border);
 }
+/* ========================================
+   Dark Mode
+   ======================================== */
+
+[data-theme='dark'] {
+  --primary: #6DB3F2;
+  --primary-dark: #5A9FE0;
+  --primary-light: #1E2A3A;
+  --success: #6FCF97;
+  --warning: #F2C94C;
+  --danger: #EB5757;
+  --text-primary: #E8E8ED;
+  --text-secondary: #B0B3C1;
+  --text-muted: #6B6E7E;
+  --bg-page: #1A1A2E;
+  --bg-white: #252540;
+  --bg-hover: #2E2E4A;
+  --border: #3A3A55;
+  --border-light: #2E2E48;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='dark'] body {
+  color: var(--text-primary);
+  background: var(--bg-page);
+}
+
+[data-theme='dark'] .app-header {
+  background: var(--bg-white);
+  border-bottom-color: var(--border);
+}
+
+[data-theme='dark'] .btn-secondary {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+[data-theme='dark'] .btn-secondary:hover {
+  background: var(--border);
+}
+
+[data-theme='dark'] .editor-section,
+[data-theme='dark'] .section-item,
+[data-theme='dark'] .modal-content {
+  background: var(--bg-white);
+  border-color: var(--border);
+}
+
+[data-theme='dark'] .section-item {
+  background: var(--bg-page);
+}
+
+[data-theme='dark'] .tab-switcher {
+  background: var(--bg-white);
+}
+
+[data-theme='dark'] .form-input,
+[data-theme='dark'] .form-textarea,
+[data-theme='dark'] .form-select {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+[data-theme='dark'] .form-input:focus,
+[data-theme='dark'] .form-textarea:focus,
+[data-theme='dark'] .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(109, 179, 242, 0.15);
+}
+
+[data-theme='dark'] .resume-preview-wrapper {
+  background: #fff;
+  color: #333;
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme='dark'] .resume-preview-wrapper .resume-section-title,
+[data-theme='dark'] .resume-preview-wrapper .resume-item-title,
+[data-theme='dark'] .resume-preview-wrapper .resume-name {
+  color: #1A1A2E;
+}
+
+[data-theme='dark'] .resume-preview-wrapper .resume-contact,
+[data-theme='dark'] .resume-preview-wrapper .resume-item-desc,
+[data-theme='dark'] .resume-preview-wrapper .resume-achievements li {
+  color: #555;
+}
+
+[data-theme='dark'] .template-card {
+  background: var(--bg-white);
+}
+
+[data-theme='dark'] .saved-item:hover {
+  background: var(--bg-hover);
+}
+
+[data-theme='dark'] .zoom-controls {
+  background: var(--bg-white);
+}
+
+[data-theme='dark'] .toggle-label:hover {
+  background: var(--bg-hover);
+}
+
+[data-theme='dark'] .modal-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
