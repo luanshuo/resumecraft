@@ -10,6 +10,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   # ============================================
@@ -30,8 +31,7 @@ jobs:
       - run: npx tsc --noEmit
       - run: npm run build
 
-      - name: Upload dist artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: frontend-dist
           path: dist/
@@ -48,6 +48,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '1.24'
+          cache-dependency-path: server/go.sum
 
       - name: Build
         working-directory: server
@@ -55,8 +56,7 @@ jobs:
           go mod tidy
           go build -o jianli .
 
-      - name: Upload binary artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: backend-binary
           path: server/jianli
@@ -68,7 +68,6 @@ jobs:
     name: Docker Image (GHCR)
     runs-on: ubuntu-latest
     needs: [frontend, backend]
-    # 仅在 main 分支 push 或 tag push 时构建镜像
     if: github.event_name == 'push'
     permissions:
       contents: read
@@ -77,21 +76,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download frontend dist
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: frontend-dist
           path: dist/
 
-      - name: Log in to GHCR
-        uses: docker/login-action@v3
+      - uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Docker meta
-        id: meta
+      - id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
@@ -102,12 +98,9 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=sha,format=short
 
-      - name: Build and push
-        uses: docker/build-push-action@v6
+      - uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
