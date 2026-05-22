@@ -35,3 +35,6 @@ vite.config.ts.timestamp-*
 # TypeScript
 *.tsbuildinfo
 /jianli
+_resume_optimized.txt
+resume_raw.txt
+_extract.mjs
